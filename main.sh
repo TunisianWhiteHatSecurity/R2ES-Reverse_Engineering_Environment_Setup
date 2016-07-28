@@ -7,19 +7,11 @@ source Install_tools.sh
 
 #Global Variables
 tabToInstall=()
+
 tabToInstall[0]="NoThing"
 
 main()
 {
-
-	#PYTHON27_WINDOWS_INSTALLED="NO"
-	#IMMUNITY_DBUGGER_INSTALLED="NO"
-	#WIN_DBG_INSTALLED="NO"
-	#PE_BROWSE_INSTALLED="NO"
-	#EDB_INSTALLED="NO"
-	#X64_DBG_INSTALLED="NO"
-	#IDA_INSTALLED="NO"
-
 
 	if [ ${GDB_INSTALLED} == "YES" ]; then
 		echo -e "\t${Green}[+] GDB is already installed."
@@ -70,6 +62,54 @@ main()
 		tabToInstall[${#tabToInstall[@]} ]="WINE"
 	fi
 
+	if [ ${PYTHON27_WINDOWS_INSTALLED} == "YES" ]; then
+		echo -e "\t${Green}[+] PYTHON27 is already installed."
+	else
+		echo -e "\t${Red}[-] PYTHON27 is not installed installed."
+		tabToInstall[${#tabToInstall[@]} ]="PYTHON27"
+	fi
+
+	if [ ${IMMUNITY_DBUGGER_INSTALLED} == "YES" ]; then
+		echo -e "\t${Green}[+] IMMUNITY_DBUGGER is already installed."
+	else
+		echo -e "\t${Red}[-] IMMUNITY_DBUGGER is not installed installed."
+		tabToInstall[${#tabToInstall[@]} ]="IMMUNITY_DBUGGER"
+	fi
+
+	if [ ${WIN_DBG_INSTALLED} == "YES" ]; then
+		echo -e "\t${Green}[+] WIN_DBG is already installed."
+	else
+		echo -e "\t${Red}[-] WIN_DBG is not installed installed."
+		tabToInstall[${#tabToInstall[@]} ]="WIN_DBG"
+	fi
+
+	if [ ${PE_BROWSE_INSTALLED} == "YES" ]; then
+		echo -e "\t${Green}[+] PE_BROWSE is already installed."
+	else
+		echo -e "\t${Red}[-] PE_BROWSE is not installed installed."
+		tabToInstall[${#tabToInstall[@]} ]="PE_BROWSE"
+	fi
+
+	if [ ${EDB_INSTALLED} == "YES" ]; then
+		echo -e "\t${Green}[+] EDB is already installed."
+	else
+		echo -e "\t${Red}[-] EDB is not installed installed."
+		tabToInstall[${#tabToInstall[@]} ]="EDB"
+	fi
+
+	if [ ${X64_DBG_INSTALLED} == "YES" ]; then
+		echo -e "\t${Green}[+] X64_DBG is already installed."
+	else
+		echo -e "\t${Red}[-] X64_DBG is not installed installed."
+		tabToInstall[${#tabToInstall[@]} ]="X64_DBG"
+	fi
+
+	if [ ${IDA_INSTALLED} == "YES" ]; then
+		echo -e "\t${Green}[+] IDA is already installed."
+	else
+		echo -e "\t${Red}[-] IDA is not installed installed."
+		tabToInstall[${#tabToInstall[@]} ]="IDA"
+	fi
 }
 
 main
