@@ -14,22 +14,8 @@ source Colors.sh
 source Check_installation.sh
 source Install_tools.sh
 
-main()
+vMain_iAppendToolsToInstall()
 {
-	vCheck_eIsGdbInstalled
-	vCheck_eIsWineInstalled
-	vCheck_eIsImmunityDebuggerInstalled
-	vCheck_eIsQmakeInstalled
-	vCheck_eIsMakeInstalled
-	vCheck_eIsDecompressorInstalled
-	vCheck_eIsPython27WindowsInstalled
-	vCheck_eIsCompilerInstalled
-	vCheck_eIsWinDbgInstalled
-	vCheck_eIsPeBrowseInstalled
-	vCheck_eIsEdbInstalled
-	vCheck_eIsX64DbgInstalled
-	vCheck_eIsIdaInstalled
-
 	if [ ${WINE_IS_INSTALLED} == "YES" ]; then
 		echo -e "\t${BGreen}[+] WINE is already installed."
 	else
@@ -127,6 +113,25 @@ main()
 		echo -e "\t${BRed}[-] IDA is not installed installed."
 		tabToInstall[${#tabToInstall[@]} ]="IDA"
 	fi
+}
+
+main()
+{
+	vCheck_eIsGdbInstalled
+	vCheck_eIsWineInstalled
+	vCheck_eIsImmunityDebuggerInstalled
+	vCheck_eIsQmakeInstalled
+	vCheck_eIsMakeInstalled
+	vCheck_eIsDecompressorInstalled
+	vCheck_eIsPython27WindowsInstalled
+	vCheck_eIsCompilerInstalled
+	vCheck_eIsWinDbgInstalled
+	vCheck_eIsPeBrowseInstalled
+	vCheck_eIsEdbInstalled
+	vCheck_eIsX64DbgInstalled
+	vCheck_eIsIdaInstalled
+
+	vMain_iAppendToolsToInstall
 
 	#vInstall_eInstallDependencies
 }
