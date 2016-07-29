@@ -93,25 +93,52 @@ vCheck_eIsDecompressorInstalled()
   fi
 }
 
+#Check if gcc is installed
+vCheck_eIsCompilerInstalled()
+{
+  if which gcc >/dev/null; then
+    COMPILER_INSTALLED="YES"
+  else
+    COMPILER_INSTALLED="NO"
+  fi
+}
+
+#Check if WIN_DBG is installed
+vCheck_eIsWinDbgInstalled()
+{
+  echo 1;
+}
+
+#Check if PEBrowse is installed
+vCheck_eIsPeBrowseInstalled()
+{
+  #  PE_BROWSE_INSTALLED
+  echo 1;
+}
+
+#Check if EDB is installed
+vCheck_eIsEdbInstalled()
+{
+  #  EDB_INSTALLED
+  echo 1;
+}
+
+#Check if X64_DBG is installed
+vCheck_eIsX64DbgInstalled()
+{
+  #  X64_DBG_INSTALLED
+  echo 1;
+}
+
+#Check if IDA is installed
+vCheck_eIsIdaInstalled()
+{
+  #  IDA_INSTALLED
+  echo 1;
+}
+
 #Check if Ollydbg is installed
 vCheck_eIsOllyDbgInstalled()
 {
 echo "1";
 }
-
-
-vCheck_eIsGdbInstalled
-vCheck_eIsWineInstalled
-vCheck_eIsImmunityDebuggerInstalled
-vCheck_eIsQmakeInstalled
-vCheck_eIsMakeInstalled
-vCheck_eIsDecompressorInstalled
-#
-# edb need gcc qmake make tgz decompresser
-# x64_gdb
-# gdb <3
-#IDA pro
-#winDBG
-#PEBrowse
-#nasm
-#bokken
